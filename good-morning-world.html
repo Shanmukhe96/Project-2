@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello Hyderabad</title>
+  <title>Good Morning World</title>
   <style>
     :root {
       color-scheme: light;
@@ -51,6 +51,36 @@
       backdrop-filter: blur(20px);
       overflow: hidden;
       isolation: isolate;
+    }
+
+    nav {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      z-index: 2;
+      display: flex;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.64);
+      box-shadow: inset 0 0 0 1px rgba(23, 32, 38, 0.08);
+    }
+
+    nav a {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 13px;
+      border-radius: 7px;
+      color: var(--ink);
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    nav a[aria-current="page"] {
+      background: var(--ink);
+      color: var(--white);
     }
 
     main::before {
@@ -325,10 +355,16 @@
         quiet confidence that something good is already on its way.
       </p>
       <div class="actions" aria-label="Morning actions">
-        <a class="button" href="#sunrise">Start the day</a>
-        <a class="button secondary" href="#sunrise">Take a breath</a>
+        <a class="button" href="city.html">Explore the city</a>
+        <a class="button secondary" href="contact.html">Say hello</a>
       </div>
     </section>
+
+    <nav aria-label="Site navigation">
+      <a href="good-morning-world.html" aria-current="page">Home</a>
+      <a href="city.html">City</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
     <section class="scene" id="sunrise" aria-hidden="true">
       <div class="cloud one"></div>
