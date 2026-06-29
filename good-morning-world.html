@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Good Morning World Hello Hyderabad</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172026;
+      --muted: #5d6974;
+      --gold: #f7b538;
+      --rose: #f07167;
+      --teal: #1d9a8a;
+      --sky: #7dc9f5;
+      --cream: #fff8e8;
+      --white: #ffffff;
+      --shadow: 0 28px 80px rgba(34, 52, 66, 0.24);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.9) 0 8%, transparent 9%),
+        linear-gradient(145deg, #8bd7ff 0%, #ffd38d 45%, #fff8e8 100%);
+    }
+
+    main {
+      width: min(1120px, calc(100% - 32px));
+      min-height: min(720px, calc(100vh - 32px));
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
+      align-items: center;
+      gap: 28px;
+      padding: clamp(28px, 5vw, 72px);
+      border: 1px solid rgba(255, 255, 255, 0.62);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.58);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    main::before {
+      content: "";
+      position: absolute;
+      inset: auto -10% -30% -10%;
+      height: 44%;
+      background:
+        linear-gradient(170deg, transparent 0 34%, rgba(29, 154, 138, 0.78) 35% 100%),
+        linear-gradient(15deg, rgba(60, 133, 99, 0.75), rgba(202, 225, 134, 0.76));
+      clip-path: polygon(0 42%, 18% 26%, 39% 48%, 58% 18%, 78% 38%, 100% 22%, 100% 100%, 0 100%);
+      z-index: -1;
+    }
+
+    .content {
+      max-width: 580px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 22px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.7);
+      color: #30635d;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 7px rgba(247, 181, 56, 0.18);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 10ch;
+      font-size: clamp(3.8rem, 9vw, 8.8rem);
+      line-height: 0.88;
+      letter-spacing: 0;
+    }
+
+    h1 span {
+      display: block;
+      color: var(--rose);
+      text-shadow: 0 8px 0 rgba(255, 255, 255, 0.48);
+    }
+
+    p {
+      max-width: 52ch;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.03rem, 1.8vw, 1.25rem);
+      line-height: 1.65;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--ink);
+      color: var(--white);
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 12px 24px rgba(23, 32, 38, 0.22);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.74);
+      color: var(--ink);
+      box-shadow: inset 0 0 0 1px rgba(23, 32, 38, 0.12);
+    }
+
+    .scene {
+      position: relative;
+      min-height: 470px;
+      display: grid;
+      place-items: center;
+    }
+
+    .sun {
+      width: min(310px, 62vw);
+      aspect-ratio: 1;
+      position: relative;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 38% 34%, #fff9ba 0 16%, transparent 17%),
+        radial-gradient(circle, #ffd166 0 50%, #f7a928 69%, #e96f45 100%);
+      box-shadow:
+        0 0 0 28px rgba(255, 209, 102, 0.2),
+        0 0 0 58px rgba(255, 255, 255, 0.13),
+        0 32px 90px rgba(233, 111, 69, 0.36);
+      animation: rise 4s ease-in-out infinite alternate;
+    }
+
+    .sun::before,
+    .sun::after {
+      content: "";
+      position: absolute;
+      inset: -42px;
+      border-radius: inherit;
+      background: repeating-conic-gradient(from 7deg, rgba(255, 255, 255, 0.7) 0 8deg, transparent 8deg 19deg);
+      z-index: -1;
+      animation: spin 22s linear infinite;
+    }
+
+    .sun::after {
+      inset: 28%;
+      background:
+        radial-gradient(circle at 35% 40%, #28313a 0 5px, transparent 6px),
+        radial-gradient(circle at 65% 40%, #28313a 0 5px, transparent 6px),
+        radial-gradient(ellipse at 50% 66%, transparent 0 13px, #28313a 14px 17px, transparent 18px);
+      animation: none;
+      z-index: 1;
+    }
+
+    .cloud {
+      position: absolute;
+      width: 190px;
+      height: 68px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 18px 30px rgba(80, 120, 143, 0.16);
+      animation: drift 8s ease-in-out infinite alternate;
+    }
+
+    .cloud::before,
+    .cloud::after {
+      content: "";
+      position: absolute;
+      bottom: 28px;
+      border-radius: 50%;
+      background: inherit;
+    }
+
+    .cloud::before {
+      left: 32px;
+      width: 76px;
+      height: 76px;
+    }
+
+    .cloud::after {
+      right: 34px;
+      width: 98px;
+      height: 98px;
+    }
+
+    .cloud.one {
+      top: 84px;
+      left: 0;
+    }
+
+    .cloud.two {
+      right: -20px;
+      bottom: 116px;
+      width: 150px;
+      transform: scale(0.85);
+      animation-duration: 10s;
+    }
+
+    .spark {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+      background: #fff;
+      transform: rotate(45deg);
+      box-shadow: 0 0 28px rgba(255, 255, 255, 0.86);
+      animation: twinkle 2.6s ease-in-out infinite;
+    }
+
+    .spark.a {
+      top: 88px;
+      right: 78px;
+    }
+
+    .spark.b {
+      bottom: 82px;
+      left: 62px;
+      animation-delay: 0.8s;
+    }
+
+    .spark.c {
+      top: 186px;
+      right: 8px;
+      animation-delay: 1.4s;
+    }
+
+    @keyframes rise {
+      from {
+        transform: translateY(14px) scale(0.98);
+      }
+
+      to {
+        transform: translateY(-14px) scale(1.02);
+      }
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes drift {
+      to {
+        transform: translateX(28px);
+      }
+    }
+
+    @keyframes twinkle {
+      0%, 100% {
+        opacity: 0.38;
+        transform: rotate(45deg) scale(0.7);
+      }
+
+      50% {
+        opacity: 1;
+        transform: rotate(45deg) scale(1.1);
+      }
+    }
+
+    @media (max-width: 820px) {
+      main {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-bottom: 130px;
+      }
+
+      .scene {
+        order: -1;
+        min-height: 310px;
+      }
+
+      .cloud.one {
+        left: -28px;
+      }
+
+      .cloud.two {
+        right: -36px;
+        bottom: 48px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main aria-label="Good morning world greeting">
+    <section class="content">
+      <p class="eyebrow">Sunrise transmission</p>
+      <h1>Good Morning <span>World</span></h1>
+      <p>
+        A bright little page to start the day with warm light, fresh air, and the
+        quiet confidence that something good is already on its way.
+      </p>
+      <div class="actions" aria-label="Morning actions">
+        <a class="button" href="#sunrise">Start the day</a>
+        <a class="button secondary" href="#sunrise">Take a breath</a>
+      </div>
+    </section>
+
+    <section class="scene" id="sunrise" aria-hidden="true">
+      <div class="cloud one"></div>
+      <div class="spark a"></div>
+      <div class="sun"></div>
+      <div class="spark b"></div>
+      <div class="spark c"></div>
+      <div class="cloud two"></div>
+    </section>
+  </main>
+</body>
+</html>
